@@ -2,7 +2,7 @@
 #
 # python script for handling PDB files
 #
-# Peter Muchina 8/Jan/2020
+# Peter Muchina 28/Jan/2020
 # 
 
 #this a dictionary to convert the three letter protein code to one letter
