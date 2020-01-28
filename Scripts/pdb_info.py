@@ -1,6 +1,10 @@
 #! /usr/bin/env python3
 #
 # python script for handling PDB files
+# this program allows you to download PDB files(read-in) from the PDB database
+# the read-in files are stored in a the user's working directory
+# with the PDB files, the user can then choose from the options what he/she wants to extract from the file
+# the user may opt to just view the contents or print the content in a file
 #
 # Peter Muchina 28/Jan/2020
 # 
