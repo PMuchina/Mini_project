@@ -71,8 +71,7 @@ def read():
         filename = os.path.join(user_input, pdb+".pdb")
 
         if os.path.isfile(filename) :
-                print ("Already read in " + pdb)
-                main
+                print ("Already read in " + pdb)      
         else :
             print ("Downloading " + pdb)
             print("Please wait")
