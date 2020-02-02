@@ -107,9 +107,24 @@ def search():
     sequence=str(''.join(raw_sequence).replace(' ',''))
     pattern = re.compile(r'[GYL]A[PFW][TLVGMT]') #Find patterns starting with G or Y or L then A then P or F or W
     matches = pattern.finditer(sequence)
+    list=[]
     for match in matches:
         print(match)
-            
+        match.group()
+        x = match.span()
+        y= x[0]
+        z = x[1]
+        for i in range(y, z):
+            list.append(i)
+        seq= []
+        for i in sequence:
+            seq.append(i)
+        for c in list:
+            indx = str(seq[c])
+            lwer=indx.lower()
+            seq[c]=lwer
+        print("".join(seq))
+
 def write():
     from Bio.Seq import Seq
     from Bio.SeqRecord import SeqRecord
