@@ -51,10 +51,12 @@ import sys
 import os
 import Bio
 
+
 def read():   
     import sys
     import os
     import urllib.request
+    from urllib.error import HTTPError
     
     assert os.path.exists(user_input)
 
@@ -75,14 +77,21 @@ def read():
         filename = os.path.join(user_input, pdb+".pdb")
 
         if os.path.isfile(filename) :
-                print ("Already read in " + pdb)      
-        else :
-            print ("Downloading " + pdb)
-            print("Please wait")
-            urllib.request.urlretrieve( src % pdb, filename)
-            print ("Successfully read in")
-    
+                print ("Already read in " + pdb)
             
+        else :
+            try:
+                print ("Downloading " + pdb)
+                print("Please wait")
+                urllib.request.urlretrieve( src % pdb, filename)
+                print ("Successfully read in")
+                
+            except HTTPError:
+                print(f' The filename you entered {filename}, is not in the database')
+                print('Please check the spelling or enter a different file')
+                read()
+                
+
 
 
 def search():
